@@ -14,18 +14,20 @@ alias zsh="bash #"
 alias exec="echo Nice try #"
 alias emacs='/usr/bin/vi'
 alias vim='vi'
+alias nvim='vi'
 alias vi='/usr/bin/emacs'
 alias nano='/bin/ed'
 alias ed='/bin/nano'
+alias joe='/bin/ed'
+alias micro='/bin/ed'
 alias unalias="echo That which is done cannot be undone #"
 alias alias="echo The name you started with is good enough #"
-checkForBin()
-{
-    if [[ $BASH_COMMAND == /bin/* ]]
+checkForBin() {
+	if [[ $BASH_COMMAND == */bin/* ]]
 	then
-	echo Being more specific does not help you!
-	set BASH_COMMAND=""
-	#echo $BASH_COMMAND
+		echo Being more specific does not help you!
+		set BASH_COMMAND=""
+		echo $BASH_COMMAND
 	fi
 }
 trap 'checkForBin' DEBUG
